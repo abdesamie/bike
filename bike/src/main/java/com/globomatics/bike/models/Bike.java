@@ -10,16 +10,15 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormat;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitialize","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Bike {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	
 	
 	private String name;
 	private String email;
@@ -31,60 +30,60 @@ public class Bike {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern="MM-dd-yyyy" )
 	private Date purchaseDate;
 	private boolean contact;
-	String getName() {
+	public String getName() {
 		return name;
 	}
-	void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
-	String getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	void setEmail(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	String getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	void setPhone(String phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	String getModel() {
+	public String getModel() {
 		return model;
 	}
-	void setModel(String model) {
+	public void setModel(String model) {
 		this.model = model;
 	}
-	String getSerialNumber() {
+	public String getSerialNumber() {
 		return serialNumber;
 	}
-	void setSerialNumber(String serialNumber) {
+	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
-	BigDecimal getPurchasePrice() {
+	public BigDecimal getPurchasePrice() {
 		return purchasePrice;
 	}
-	void setPurchasePrice(BigDecimal purchasePrice) {
+	public void setPurchasePrice(BigDecimal purchasePrice) {
 		this.purchasePrice = purchasePrice;
 	}
 	Date getPurchaseDate() {
 		return purchaseDate;
 	}
-	void setPurchaseDate(Date purchaseDate) {
+	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
-	boolean isContact() {
+	public boolean isContact() {
 		return contact;
 	}
-	void setContact(boolean contact) {
+	public void setContact(boolean contact) {
 		this.contact = contact;
 	}
 	
 
-	Long getId() {
+	public Long getId() {
 		return id;
 	}
-	void setId(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
